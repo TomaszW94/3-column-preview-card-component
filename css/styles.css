@@ -1,0 +1,201 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+a {
+  text-decoration: none;
+}
+
+.cards {
+  margin: 3.5em 1.2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card {
+  padding: 2em;
+}
+
+.card-luxury--color {
+  background-color: #004241;
+}
+
+.card-sedans--color {
+  background-color: #e38826;
+}
+
+.card-suvs--color {
+  background-color: #006970;
+}
+
+.card__icon {
+  -webkit-animation: title-animate 1.5s;
+          animation: title-animate 1.5s;
+}
+
+.card__title {
+  font-family: "Big Shoulders Display", cursive;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin: 1.2em 0;
+}
+
+.card__btn {
+  margin-top: 3em;
+  padding: 0.7em 2em;
+  border-radius: 1rem;
+  border-color: transparent;
+  font-family: "Lexend Deca", sans-serif;
+  cursor: pointer;
+}
+
+.card__btn--sedans-color {
+  color: #e38826;
+}
+
+.card__btn--suvs-color {
+  color: #006970;
+}
+
+.card__btn--luxury-color {
+  color: #006970;
+}
+
+.card:nth-child(1) {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.card:nth-last-child(1) {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.attribution {
+  margin: 0.8em auto;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #000;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (min-width: 1440px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-height: 100vh;
+  }
+  .cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+    max-width: 65em;
+  }
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    min-height: 500px;
+  }
+  .card__icon {
+    -webkit-animation: car-animate 1.5s;
+            animation: car-animate 1.5s;
+  }
+  .card__title {
+    font-size: 2.3rem;
+  }
+  .card:nth-child(1) {
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+  }
+  .card:nth-last-child(1) {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+  }
+  .card__btn {
+    -webkit-transition: background-color 0.2s ease-in;
+    transition: background-color 0.2s ease-in;
+    -webkit-animation: btn-animate 2s;
+            animation: btn-animate 2s;
+  }
+  .card__btn:hover {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+  }
+  .card__btn:hover > .card__btn--hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+@-webkit-keyframes car-animate {
+  from {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes car-animate {
+  from {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

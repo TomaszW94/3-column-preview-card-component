@@ -1,0 +1,142 @@
+@import "variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  color: $textColor;
+}
+a {
+  text-decoration: none;
+}
+.cards {
+  margin: 3.5em 1.2em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  padding: 2em;
+  &-luxury--color {
+    background-color: $luxuryColor;
+  }
+  &-sedans--color {
+    background-color: $sedansColor;
+  }
+  &-suvs--color {
+    background-color: $suvsColor;
+  }
+  &__icon {
+    animation: title-animate 1.5s;
+  }
+  &__title {
+    font-family: "Big Shoulders Display", cursive;
+    color: $headingColor;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin: 1.2em 0;
+  }
+  &__btn {
+    margin-top: 3em;
+    padding: 0.7em 2em;
+    border-radius: 1rem;
+    border-color: transparent;
+    font-family: "Lexend Deca", sans-serif;
+    cursor: pointer;
+    &--sedans-color {
+      color: $sedansColor;
+    }
+    &--suvs-color {
+      color: $suvsColor;
+    }
+    &--luxury-color {
+      color: $suvsColor;
+    }
+  }
+  &:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  &:nth-last-child(1) {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+}
+
+.attribution {
+  margin: 0.8em auto;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #000;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (min-width: $desktop) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 65em;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 500px;
+    &__icon {
+      animation: car-animate 1.5s;
+    }
+    &__title {
+      font-size: 2.3rem;
+    }
+    &:nth-child(1) {
+      border-top-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      border-top-right-radius: 0;
+    }
+    &:nth-last-child(1) {
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0;
+    }
+    &__btn {
+      transition: background-color 0.2s ease-in;
+      animation: btn-animate 2s;
+      &:hover {
+        background-color: transparent;
+        border: 2px solid $textColor;
+      }
+      &:hover > &--hover {
+        color: $textColor;
+      }
+    }
+  }
+}
+
+@keyframes car-animate {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
